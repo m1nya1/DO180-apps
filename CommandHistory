@@ -1,0 +1,183 @@
+[student@workstation ~]$ gedit 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
+[student@workstation ~]$ gedit token
+[student@workstation ~]$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  token  Videos
+[student@workstation ~]$ ls -
+ls: cannot access '-': No such file or directory
+[student@workstation ~]$ ls -l
+total 4
+drwxr-xr-x. 2 student student  6 Jan 31 09:15 Desktop
+drwxr-xr-x. 2 student student  6 Jan 31 09:15 Documents
+drwxr-xr-x. 2 student student  6 Jan 31 09:15 Downloads
+drwxr-xr-x. 2 student student  6 Jan 31 09:15 Music
+drwxr-xr-x. 2 student student  6 Jan 31 09:15 Pictures
+drwxr-xr-x. 2 student student  6 Jan 31 09:15 Public
+drwxr-xr-x. 2 student student  6 Jan 31 09:15 Templates
+-rw-rw-r--. 1 student student 41 Jan 31 13:18 token
+drwxr-xr-x. 2 student student  6 Jan 31 09:15 Videos
+[student@workstation ~]$ git config --global credential.helper cache
+[student@workstation ~]$ lab-configure
+
+This script configures the connection parameters to access the OpenShift cluster for your lab scripts
+
+ · Enter the API Endpoint: https://api.na46.prod.nextcle.com:6443/
+ · Enter the Username: tgkkks
+ · Enter the Password: d67ea384807247bfb89c
+ · Enter the GitHub Account Name: m1nya1
+ · Enter the Quay.io Account Name: OCP_Registries
+
+You entered:
+ · API Endpoint:			https://api.na46.prod.nextcle.com:6443/
+ · Username:				tgkkks
+ · Password:				d67ea384807247bfb89c
+ · GitHub Account Name:			m1nya1
+ · Quay.io Account Name:		OCP_Registries
+
+Generated config:
+ · API Endpoint:			https://api.na46.prod.nextcle.com:6443/
+ · Wildcard Domain:			apps.na46.prod.nextcle.com
+ · Nexus Server Host:			nexus-common.apps.na46.prod.nextcle.com
+ · Username:				tgkkks
+ · Password:				d67ea384807247bfb89c
+ · GitHub Account Name:			m1nya1
+ · Quay.io Account Name:		OCP_Registries
+
+Verifying your API Endpoint...
+
+ERROR:
+Cannot connect to an OpenShift 4.5 API using your URL.
+Please verify you network connectivity and that the URL does not point to an OpenShift 3.x nor to a non-OpenShift Kubernetes API.
+[student@workstation ~]$ lab-configure
+
+This script configures the connection parameters to access the OpenShift cluster for your lab scripts
+
+ · Enter the API Endpoint: https://api.na46.prod.nextcle.com:6443
+ · Enter the Username: tgkkks
+ · Enter the Password: d67ea384807247bfb89c
+ · Enter the GitHub Account Name: m1nya1
+ · Enter the Quay.io Account Name: OCP_Registries
+
+You entered:
+ · API Endpoint:			https://api.na46.prod.nextcle.com:6443
+ · Username:				tgkkks
+ · Password:				d67ea384807247bfb89c
+ · GitHub Account Name:			m1nya1
+ · Quay.io Account Name:		OCP_Registries
+
+Generated config:
+ · API Endpoint:			https://api.na46.prod.nextcle.com:6443
+ · Wildcard Domain:			apps.na46.prod.nextcle.com
+ · Nexus Server Host:			nexus-common.apps.na46.prod.nextcle.com
+ · Username:				tgkkks
+ · Password:				d67ea384807247bfb89c
+ · GitHub Account Name:			m1nya1
+ · Quay.io Account Name:		OCP_Registries
+
+Verifying your API Endpoint...
+
+Verifying your Nexus host...
+
+Verifying your OpenShift developer user credentials...
+
+Verifying your GitHub account name...
+
+Verifying your Quay.io account name...
+
+Verifying your cluster configuration...
+
+Saving your lab configuration file...
+
+All fine, lab config saved. You can now proceed with your exercises.
+
+If you need to modify the configuration, rerun this script or directly modify the values in /usr/local/etc/ocp4.config.
+
+[student@workstation ~]$ gedit
+[student@workstation ~]$ git clone https://github.com/m1nya1/DO180-apps
+Cloning into 'DO180-apps'...
+remote: Enumerating objects: 78, done.
+remote: Total 78 (delta 0), reused 0 (delta 0), pack-reused 78
+Unpacking objects: 100% (78/78), done.
+[student@workstation ~]$ ls
+Desktop  DO180-apps  Documents  Downloads  labconfig  Music  Pictures  Public  Templates  token  Videos
+[student@workstation ~]$ cd DO180-apps
+[student@workstation DO180-apps]$ ls
+example  nodejs-app  nodejs-helloworld  php-helloworld  README.md  temps  todoapp
+[student@workstation DO180-apps]$ ls -l
+total 4
+drwxrwxr-x. 2 student student 23 Jan 31 13:52 example
+drwxrwxr-x. 2 student student 43 Jan 31 13:52 nodejs-app
+drwxrwxr-x. 2 student student 40 Jan 31 13:52 nodejs-helloworld
+drwxrwxr-x. 2 student student 23 Jan 31 13:52 php-helloworld
+-rw-rw-r--. 1 student student 54 Jan 31 13:52 README.md
+drwxrwxr-x. 2 student student 23 Jan 31 13:52 temps
+drwxrwxr-x. 5 student student 51 Jan 31 13:52 todoapp
+[student@workstation DO180-apps]$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+[student@workstation DO180-apps]$ git checkout -b testbranch
+Switched to a new branch 'testbranch'
+[student@workstation DO180-apps]$ git status
+On branch testbranch
+nothing to commit, working tree clean
+[student@workstation DO180-apps]$ git branch
+  master
+* testbranch
+[student@workstation DO180-apps]$ gedit TEST
+[student@workstation DO180-apps]$ ls -l
+total 8
+drwxrwxr-x. 2 student student 23 Jan 31 13:52 example
+drwxrwxr-x. 2 student student 43 Jan 31 13:52 nodejs-app
+drwxrwxr-x. 2 student student 40 Jan 31 13:52 nodejs-helloworld
+drwxrwxr-x. 2 student student 23 Jan 31 13:52 php-helloworld
+-rw-rw-r--. 1 student student 54 Jan 31 13:52 README.md
+drwxrwxr-x. 2 student student 23 Jan 31 13:52 temps
+-rw-rw-r--. 1 student student  6 Jan 31 13:57 TEST
+drwxrwxr-x. 5 student student 51 Jan 31 13:52 todoapp
+[student@workstation DO180-apps]$ git status
+On branch testbranch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	TEST
+
+nothing added to commit but untracked files present (use "git add" to track)
+[student@workstation DO180-apps]$ git add --all
+[student@workstation DO180-apps]$ git status
+On branch testbranch
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   TEST
+
+[student@workstation DO180-apps]$ git commit -m "added test file"
+[testbranch 7506ecc] added test file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 TEST
+[student@workstation DO180-apps]$ git status
+On branch testbranch
+nothing to commit, working tree clean
+[student@workstation DO180-apps]$ git push --set-upstream origin testbranch
+Username for 'https://github.com': m1nya1
+Password for 'https://m1nya1@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 289 bytes | 289.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'testbranch' on GitHub by visiting:
+remote:      https://github.com/m1nya1/DO180-apps/pull/new/testbranch
+remote: 
+To https://github.com/m1nya1/DO180-apps
+ * [new branch]      testbranch -> testbranch
+Branch 'testbranch' set up to track remote branch 'testbranch' from 'origin'.
+[student@workstation DO180-apps]$ git status
+On branch testbranch
+Your branch is up to date with 'origin/testbranch'.
+
+nothing to commit, working tree clean
+[student@workstation DO180-apps]$ 
